@@ -21,7 +21,8 @@ const generateHash = (str) => {
 
     str = str.split(" ");
     str = str.map((currElem) => 
-        currElem.replace(currElem[0], currElem[0].toUpperCase())
+        // currElem.replace(currElem[0], currElem[0].toUpperCase())
+        currElem.charAt(0).toUpperCase() + currElem.slice(1)
     );
 
     str = `#${str.join("")}`;
