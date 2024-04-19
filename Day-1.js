@@ -24,9 +24,14 @@ const findLongestWord = (str) => {
     }
 
     words = str.split(" ");
-    words = words.sort((a, b) => b.length - a.length);
+    // words = words.sort((a, b) => b.length - a.length);
     // console.log(words);
-    return words[0];
+    // return words[0];
+
+    return words.reduce(
+        (accum, currWord) => (currWord.length > accum.length ? currWord : accum),
+        ""
+    );
 }
 
 console.log(
